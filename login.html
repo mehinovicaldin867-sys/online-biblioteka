@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login</title>
+<style>
+body {
+  background: linear-gradient(135deg, #141e30, #243b55);
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.box {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 300px;
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #00c6ff;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0072ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Login</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="login()">Login</button>
+  <p><a href="signup.html" style="color:#00c6ff;">Nemaš račun?</a></p>
+</div>
+
+<script>
+function login() {
+  let u = username.value;
+  let p = password.value;
+  let saved = localStorage.getItem(u);
+
+  if(saved === p){
+    localStorage.setItem("loggedUser", u);
+    window.location.href = "index.html";
+  } else {
+    alert("Pogrešni podaci!");
+  }
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Online Biblioteka</title>
+<style>
+body {
+  margin:0;
+  font-family: Arial;
+  background:#0f172a;
+  color:white;
+}
+
+nav {
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  background:#1e293b;
+}
+
+.card {
+  background:#1e293b;
+  margin:20px;
+  padding:20px;
+  border-radius:10px;
+}
+
+button {
+  background:#00c6ff;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>📚 Biblioteka</h2>
+  <button onclick="logout()">Logout</button>
+</nav>
+
+<div class="card">
+  <h3>Dobrodošao</h3>
+  <p id="user"></p>
+</div>
+
+<div class="card">
+  <h3>Knjige</h3>
+  <p>Na Drini ćuprija - 1945</p>
+  <button>Posudi</button>
+</div>
+
+<script>
+let user = localStorage.getItem("loggedUser");
+
+if(!user){
+  window.location.href = "login.html";
+}
+
+document.getElementById("user").innerText = user;
+
+function logout(){
+  localStorage.removeItem("loggedUser");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

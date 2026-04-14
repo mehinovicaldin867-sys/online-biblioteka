@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sign Up</title>
+<style>
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  font-family: Arial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+
+.box {
+  background: rgba(255,255,255,0.1);
+  padding: 30px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  width: 300px;
+  text-align: center;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  background: #00c6ff;
+  color: white;
+}
+
+button:hover {
+  background: #0072ff;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+  <h2>Registracija</h2>
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="signup()">Sign Up</button>
+</div>
+
+<script>
+function signup() {
+  let u = username.value;
+  let p = password.value;
+
+  localStorage.setItem(u, p);
+  alert("Registrovan!");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>
